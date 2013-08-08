@@ -9,10 +9,19 @@
   <%= @game.name %>
 </p>
 
+<p>
+	<strong>Health:</strong>
+	<%= @game.games_health %>
+</p>
 <% if @scenario %>
 <p><%= @scenario.scenario %></p>
 <% else %>
 <p>a;lskdfjlks</p>
+<% end -%>
+
+
+<%= form_tag('url_goes_here', :method => :get) do %>
+
 <% end -%>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |

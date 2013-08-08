@@ -6,18 +6,19 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
   end
-
   # GET /games/1
   # GET /games/1.json
   def show
     user_interaction = params[:user_interaction]
     if user_interaction == 'Left'
       @scenario = Scenario.where(:user_interaction => "Left").sample
+      @game.games_health += @scenario.health
     elsif user_interaction == 'Right'
       @scenario = Scenario.where(:user_interaction => "Right")
+      @game.games_health += @scenario.health
     end
+    
   end
-
   # GET /games/new
   def new
     @game = Game.new
@@ -31,6 +32,8 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
+
+      @game.games_health = 100
 
     respond_to do |format|
       if @game.save
