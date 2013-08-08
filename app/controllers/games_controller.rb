@@ -10,6 +10,12 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    user_interaction = params[:user_interaction]
+    if user_interaction == 'Left'
+      @scenario = Scenario.where(:user_interaction => "Left").sample
+    elsif user_interaction == 'Right'
+      @scenario = Scenario.where(:user_interaction => "Right")
+    end
   end
 
   # GET /games/new

@@ -6,10 +6,11 @@ class ScenariosController < ApplicationController
   def index
     @scenarios = Scenario.all
   end
-
   # GET /scenarios/1
   # GET /scenarios/1.json
   def show
+
+
   end
 
   # GET /scenarios/new

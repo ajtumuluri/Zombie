@@ -4,11 +4,16 @@
   <strong>User:</strong>
   <%= @game.user.username %>
 </p>
-
 <p>
   <strong>Name:</strong>
   <%= @game.name %>
 </p>
+
+<% if @scenario %>
+<p><%= @scenario.scenario %></p>
+<% else %>
+<p>a;lskdfjlks</p>
+<% end -%>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
