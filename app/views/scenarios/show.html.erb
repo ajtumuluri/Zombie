@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Scenario:</strong>
+  <%= @scenario.scenario %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scenario.name %>
+</p>
+
+<p>
+  <strong>Health:</strong>
+  <%= @scenario.health %>
+</p>
+
+<p>
+  <strong>User interaction:</strong>
+  <%= @scenario.user_interaction %>
+</p>
+
+<%= link_to 'Edit', edit_scenario_path(@scenario) %> |
+<%= link_to 'Back', scenarios_path %>

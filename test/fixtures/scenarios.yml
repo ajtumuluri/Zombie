@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  scenario: MyText
+  name: MyString
+  health: 1
+  user_interaction: MyString
+
+two:
+  scenario: MyText
+  name: MyString
+  health: 1
+  user_interaction: MyString
