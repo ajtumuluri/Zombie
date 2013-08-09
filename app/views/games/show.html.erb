@@ -16,13 +16,15 @@
 <% if @scenario %>
 <p><%= @scenario.scenario %></p>
 <% else %>
-<p>a;lskdfjlks</p>
+<p>The zombie apocalypse is here. The one from all your dreams, or nighmares. As a biomedical engineer for the army, you have been stationed in Chicago, alone, to find a cure to the zombie disease. To choose different scenarios, choose right or left. </p>
+<% end -%>
+<% if @game.games_health <= 0 %>
+<p>You have died.</p>
+<% else %>
+<p><%= link_to "Left","/games/#{@game.id}?user_interaction=Left" %> | <%= link_to "Right","/games/#{@game.id}?user_interaction=Right" %> </p>
+
+<%= image_tag @zombie_pic %>
+</p>
 <% end -%>
 
-
-<%= form_tag('url_goes_here', :method => :get) do %>
-
-<% end -%>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

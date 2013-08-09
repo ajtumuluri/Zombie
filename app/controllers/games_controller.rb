@@ -13,12 +13,18 @@ class GamesController < ApplicationController
     if user_interaction == 'Left'
       @scenario = Scenario.where(:user_interaction => "Left").sample
       @game.games_health += @scenario.health
+      @game.save
     elsif user_interaction == 'Right'
-      @scenario = Scenario.where(:user_interaction => "Right")
+      @scenario = Scenario.where(:user_interaction => "Right").sample
       @game.games_health += @scenario.health
+      @game.save
     end
     
-  end
+    z_pics =  ["zombies.jpg", "zombies1.jpg", "images.jpg", "zimbies_cartoon.jpg", "", ""]
+
+    @zombie_pic = z_pics.sample
+
+   end
   # GET /games/new
   def new
     @game = Game.new
